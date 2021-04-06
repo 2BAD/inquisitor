@@ -14,3 +14,5 @@ export const client = got.extend({
     ]
   }
 })
+
+export const time = (url: string) => client.get(url).then(r => r.timings)
