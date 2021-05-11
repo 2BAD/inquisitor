@@ -1,0 +1,5 @@
+Project:
+  Configuration:
+    ☐ Evaluate possibility to drop commonjs entirely @low
+  Network:
+    ☐ Handle all error codes for HTTP requests
