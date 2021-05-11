@@ -12,10 +12,6 @@
       "skipFiles": [
         "<node_internals>/**"
       ],
-      "resolveSourceMapLocations": [
-        "${workspaceFolder}/**",
-        "!**/node_modules/**"
-      ],
       "runtimeArgs": [
         "--experimental-specifier-resolution=node",
         "--loader=ts-node/esm",
