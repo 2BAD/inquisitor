@@ -31,7 +31,10 @@
   "module": "./build/esm/inquisitor.js",
   "typings": "./build/types/inquisitor.d.ts",
   "files": [
-    "build"
+    "build",
+    "CHANGELOG.md",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "build": "run-s clean && run-p build:*",
