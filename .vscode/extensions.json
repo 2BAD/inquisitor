@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
+    "fabiospampinato.vscode-todo-plus",
+    "ms-vscode.js-debug-nightly",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
