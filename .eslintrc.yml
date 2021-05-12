@@ -1,13 +1,22 @@
+parser: '@typescript-eslint/parser'
 parserOptions:
   project: './tsconfig.json'
 
 ignorePatterns:
   - 'build'
 
+plugins:
+  - '@typescript-eslint'
+  - 'functional'
+
 extends:
+  - 'eslint:recommended'
   - 'standard-with-typescript'
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:@typescript-eslint/recommended-requiring-type-checking'
+  - 'plugin:functional/external-recommended'
+  - 'plugin:functional/recommended'
+  - 'plugin:functional/stylitic'
   - 'plugin:jest/all'
 
 rules:
