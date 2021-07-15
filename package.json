@@ -72,7 +72,8 @@
   },
   "dependencies": {
     "got": "11.8.2",
-    "roarr": "7.0.1"
+    "roarr": "7.0.1",
+    "serialize-error": "8.1.0"
   },
   "devDependencies": {
     "@types/jest": "26.0.24",
