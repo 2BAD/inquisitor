@@ -1,4 +1,5 @@
 import { NormalizedOptions, Response } from 'got'
+import type { NormalizedOptions, Response } from 'got'
 
 export const logRequest = (options: NormalizedOptions) => {
   console.log(`-> ${options.method} - ${options.url.toString()}`)
