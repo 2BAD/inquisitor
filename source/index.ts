@@ -1,5 +1,5 @@
-import { time } from '~/client'
-import { min } from '~/dns/resolve'
+import { time } from './client'
+import { min } from './dns/resolve'
 
 export const Inquisitor = () => {
   return {

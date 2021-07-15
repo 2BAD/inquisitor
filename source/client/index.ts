@@ -1,5 +1,5 @@
 import got from 'got'
-import { logRequest, logResponse } from '~/client/hooks/debug'
+import { logRequest, logResponse } from './hooks/debug'
 
 export const client = got.extend({
   headers: {
