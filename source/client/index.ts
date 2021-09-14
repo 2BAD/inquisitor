@@ -10,5 +10,3 @@ export const client = got.extend({
     afterResponse: [logResponse]
   }
 })
-
-export const time = (url: string) => client.get(url).then((r) => r.timings)
