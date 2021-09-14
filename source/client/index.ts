@@ -6,13 +6,9 @@ export const client = got.extend({
     'user-agent': '2bad/inquisitor'
   },
   hooks: {
-    beforeRequest: [
-      logRequest
-    ],
-    afterResponse: [
-      logResponse
-    ]
+    beforeRequest: [logRequest],
+    afterResponse: [logResponse]
   }
 })
 
-export const time = (url: string) => client.get(url).then(r => r.timings)
+export const time = (url: string) => client.get(url).then((r) => r.timings)
