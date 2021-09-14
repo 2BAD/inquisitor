@@ -1,5 +1,3 @@
-/* eslint-disable functional/no-return-void */
-/* eslint-disable functional/no-expression-statement */
 import type { NormalizedOptions, Response } from 'got'
 import { serializeError } from 'serialize-error'
 import { Logger } from './../../logger'
@@ -9,31 +7,31 @@ const log = Logger.child({
 })
 
 export const logRequest = (options: NormalizedOptions): void => {
-  log.debug({
+  const context = {
     method: options.method,
     url: options.url.toString(),
     body: options?.body?.toString() ?? '',
     searchParams: options?.searchParams?.toString() ?? ''
-  }, 'request parameters')
+  }
+
+  log.debug(context, 'request parameters')
 }
 
 export const logResponse = (response: Response): Response => {
   const { url, statusCode } = response
-  // eslint-disable-next-line functional/no-let
   let body = response.body
-  // eslint-disable-next-line functional/no-try-statement
+
   try {
     body = JSON.stringify(body)
   } catch (error) {
-    log.error({
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      error: serializeError(error)
-    }, 'payload cannot be stringified')
+    log.error(serializeError(error), 'payload cannot be stringified')
   }
-  log.debug({
+
+  const context = {
     url,
-    statusCode,
-    // body
-  }, 'response data')
+    statusCode
+  }
+
+  log.debug(context, 'response data')
   return response
 }
