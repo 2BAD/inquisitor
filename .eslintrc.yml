@@ -7,7 +7,6 @@ ignorePatterns:
 
 plugins:
   - '@typescript-eslint'
-  - 'functional'
   - 'prettier'
 
 extends:
@@ -15,8 +14,5 @@ extends:
   - 'standard-with-typescript'
   - 'plugin:@typescript-eslint/recommended'
   - 'plugin:@typescript-eslint/recommended-requiring-type-checking'
-  - 'plugin:functional/external-recommended'
-  - 'plugin:functional/recommended'
-  - 'plugin:functional/stylitic'
   - 'plugin:jest/all'
   - 'plugin:prettier/recommended'
