@@ -53,6 +53,12 @@
     "test:watch": "jest --watch",
     "preversion": "run-s clean lint test build"
   },
+  "prettier": {
+    "printWidth": 120,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
   "jest": {
     "collectCoverageFrom": [
       "source/**/*.ts"
@@ -97,12 +103,6 @@
     "ts-jest": "27.0.5",
     "ts-node": "10.2.1",
     "typescript": "4.4.3"
-  },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none",
-    "printWidth": 120
   },
   "volta": {
     "node": "16.9.1"
