@@ -19,5 +19,4 @@ extends:
   - 'plugin:functional/recommended'
   - 'plugin:functional/stylitic'
   - 'plugin:jest/all'
-  - 'prettier/@type script-eslint'
   - 'plugin:prettier/recommended'
