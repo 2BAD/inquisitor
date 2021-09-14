@@ -1,37 +1,32 @@
 import type { NormalizedOptions, Response } from 'got'
-import { serializeError } from 'serialize-error'
 import { Logger } from './../../logger'
 
 const log = Logger.child({
-  namespace: 'request'
+  namespace: 'client'
 })
 
 export const logRequest = (options: NormalizedOptions): void => {
+  const { method, url, body, searchParams } = options
+
   const context = {
-    method: options.method,
-    url: options.url.toString(),
-    body: options?.body?.toString() ?? '',
-    searchParams: options?.searchParams?.toString() ?? ''
+    method: method,
+    url: url.toString(),
+    body: body?.toString() ?? '',
+    searchParams: searchParams?.toString() ?? ''
   }
 
   log.debug(context, 'request parameters')
 }
 
 export const logResponse = (response: Response): Response => {
-  const { url, statusCode } = response
-  let body = response.body
-
-  try {
-    body = JSON.stringify(body)
-  } catch (error) {
-    log.error(serializeError(error), 'payload cannot be stringified')
-  }
+  const { url, headers, statusCode } = response
 
   const context = {
     url,
+    headers,
     statusCode
   }
 
-  log.debug(context, 'response data')
+  log.debug(context, 'response info')
   return response
 }
