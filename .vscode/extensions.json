@@ -1,9 +1,11 @@
 {
   "recommendations": [
     "dbaeumer.vscode-eslint",
-    "EditorConfig.EditorConfig",
+    "editorconfig.editorconfig",
     "fabiospampinato.vscode-todo-plus",
     "ms-vscode.js-debug-nightly",
-    "streetsidesoftware.code-spell-checker"
+    "streetsidesoftware.code-spell-checker",
+    "redhat.vscode-yaml",
+    "esbenp.prettier-vscode"
   ]
 }
