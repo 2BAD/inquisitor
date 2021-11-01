@@ -1,22 +1,16 @@
-import { promises as dns } from 'dns'
+import type { AnyRecord, MxRecord, NaptrRecord, SoaRecord, SrvRecord } from 'dns'
+import { Resolver } from 'dns/promises'
+import { RRType } from '../types/rrtype'
 
-const resolver = new dns.Resolver()
-resolver.setServers(['8.8.8.8'])
+export const createResolver = (servers = ['8.8.8.8', '8.8.4.4']): Resolver => {
+  const resolver = new Resolver()
+  resolver.setServers(servers)
+  return resolver
+}
 
-export const a = (domain: string) => resolver.resolve(domain, 'A')
-export const aaaa = (domain: string) => resolver.resolve(domain, 'AAAA')
-export const cname = (domain: string) => resolver.resolve(domain, 'CNAME')
-export const mx = (domain: string) => resolver.resolve(domain, 'MX')
-export const naptr = (domain: string) => resolver.resolve(domain, 'NAPTR')
-export const ns = (domain: string) => resolver.resolve(domain, 'NS')
-export const ptr = (domain: string) => resolver.resolve(domain, 'PRT')
-export const soa = (domain: string) => resolver.resolve(domain, 'SOA')
-export const srv = (domain: string) => resolver.resolve(domain, 'SRV')
-export const txt = (domain: string) => resolver.resolve(domain, 'TXT')
-
-export const min = async (domain: string) => ({
-  a: await a(domain),
-  cname: await cname(domain),
-  mx: await mx(domain),
-  txt: await txt(domain)
-})
+export const setupResolve =
+  (resolver: Resolver) =>
+  (domain: string) =>
+  (type: RRType) =>
+  (): Promise<string[] | MxRecord[] | NaptrRecord[] | SoaRecord | SrvRecord[] | string[][] | AnyRecord[]> =>
+    resolver.resolve(domain, type)
