@@ -5,6 +5,7 @@ Project:
       `tsconfig-paths` does not support esm and probably will never do, see `tsconfig-paths/122`
     ✔ Replace path aliases with relative path @high @done(21-07-15 04:34)
     ☐ Update and test eslint rules
+    ✔ Add prettier to the mix and test it @done(21-11-03 22:09)
   Network:
     ☐ Handle all error codes for HTTP requests
   Logging:
