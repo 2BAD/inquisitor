@@ -9,4 +9,4 @@ Project:
   Network:
     ☐ Handle all error codes for HTTP requests
   Logging:
-    ☐ Replace `console.log` with `roarr` @low
+    ✔ Replace `console.log` with `roarr` @low @done(21-11-03 22:09)
