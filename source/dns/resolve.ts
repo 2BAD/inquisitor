@@ -1,6 +1,6 @@
 import type { AnyRecord, MxRecord, NaptrRecord, SoaRecord, SrvRecord } from 'dns'
+import type { RRType } from '../types/rrtype'
 import { Resolver } from 'dns/promises'
-import { RRType } from '../types/rrtype'
 
 export const createResolver = (servers = ['8.8.8.8', '8.8.4.4']): Resolver => {
   const resolver = new Resolver()

@@ -1,5 +1,5 @@
-import { time } from './client/time'
-import { min } from './dns/resolve'
+import type { Resolver } from 'dns/promises'
+import type { Inquire } from './types/inquire'
 
 export const Inquisitor = () => {
   return {
