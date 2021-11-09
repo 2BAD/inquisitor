@@ -1,8 +1,9 @@
 import type { Resolver } from 'dns/promises'
 import type { Inquire } from './types/inquire'
-import { timings, content } from './client/get'
-import { createResolver, setupResolve } from './dns/resolve'
 import { URL } from 'url'
+import { client } from './client'
+import { content, timings } from './client/get'
+import { createResolver, setupResolve } from './dns/resolve'
 
 export const Inquisitor = (url: string, resolver?: Resolver): Inquire => {
   const { hostname } = new URL(url)
@@ -10,8 +11,8 @@ export const Inquisitor = (url: string, resolver?: Resolver): Inquire => {
   const resolve = setupResolve(resolver)(hostname)
 
   return {
-    timings: timings(url),
-    content: content(url),
+    timings: timings(client),
+    content: content(client),
     dns: {
       a: resolve('A'),
       cname: resolve('CNAME'),
