@@ -2,8 +2,8 @@ import { Result as ResolveResult } from './resolve'
 import type { Timings } from './timings'
 
 export type Inquire = {
-  timings: () => Promise<Timings>
-  content: () => Promise<string>
+  timings: (url: string) => Promise<Timings>
+  content: (url: string) => Promise<string>
   dns: {
     a: () => ResolveResult
     cname: () => ResolveResult
