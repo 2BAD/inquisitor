@@ -1,6 +1,6 @@
 import type { Response, CancelableRequest } from 'got'
 
-export type HTTPClient = {
+export type Client = {
   get: (url: string | URL) => CancelableRequest<Response<string>>
   head: (url: string | URL) => CancelableRequest<Response<string>>
 }
