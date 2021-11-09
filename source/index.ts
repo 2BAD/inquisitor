@@ -1,7 +1,7 @@
 import type { Resolver } from 'dns/promises'
 import type { Inquire } from './types/inquire'
 import { URL } from 'url'
-import { client } from './client'
+import { client } from './client/index'
 import { content, timings } from './client/get'
 import { createResolver, setupResolve } from './dns/resolve'
 

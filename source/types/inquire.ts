@@ -1,5 +1,5 @@
+import type { Timings } from './http'
 import { Result as ResolveResult } from './resolve'
-import type { Timings } from './timings'
 
 export type Inquire = {
   timings: (url: string) => Promise<Timings>

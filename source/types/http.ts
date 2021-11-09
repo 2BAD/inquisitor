@@ -1,4 +1,4 @@
-import type { Response, CancelableRequest } from 'got'
+import type { CancelableRequest, Response } from 'got'
 
 export type Client = {
   get: (url: string | URL) => CancelableRequest<Response<string>>
