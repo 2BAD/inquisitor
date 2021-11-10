@@ -23,7 +23,7 @@ export const logResponse = (response: Response): Response => {
 
   const context = {
     url,
-    headers,
+    headers: headers?.toString(),
     statusCode
   }
 
