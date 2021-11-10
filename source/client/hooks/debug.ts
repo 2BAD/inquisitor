@@ -10,7 +10,7 @@ export const logRequest = (options: NormalizedOptions): void => {
 
   const context = {
     method: method,
-    url: url.toString(),
+    url: url?.toString() ?? '',
     body: body?.toString() ?? '',
     searchParams: searchParams?.toString() ?? ''
   }
