@@ -1,11 +1,11 @@
-import type { NormalizedOptions, Response } from 'got'
+import type { Options, Response } from 'got'
 import { Logger } from './../../logger'
 
 const log = Logger.child({
   namespace: 'client'
 })
 
-export const logRequest = (options: NormalizedOptions): void => {
+export const logRequest = (options: Options): void => {
   const { method, url, body, searchParams } = options
 
   const context = {
