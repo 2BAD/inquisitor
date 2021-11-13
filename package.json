@@ -21,25 +21,13 @@
     }
   ],
   "type": "module",
-  "exports": {
-    ".": {
-      "require": "./build/cjs/inquisitor.js",
-      "default": "./build/esm/inquisitor.js"
-    }
-  },
-  "main": "./build/cjs/inquisitor.js",
-  "module": "./build/esm/inquisitor.js",
-  "typings": "./build/types/inquisitor.d.ts",
+  "exports": "./build/index.js",
+  "typings": "./build/index.d.ts",
   "files": [
-    "build",
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md"
+    "build"
   ],
   "scripts": {
-    "build": "run-s clean && run-p build:*",
-    "build:esm": "tsc --project tsconfig.json",
-    "build:types": "tsc --project tsconfig.types.json",
+    "build": "tsc --project tsconfig.json",
     "clean": "rimraf build",
     "lint": "eslint . --ext .ts",
     "lint:fix": "run-s \"lint -- --fix\"",
